@@ -62,6 +62,7 @@ class SearchFragment : Fragment() {
         val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         binding.txtSearch.setOnClickListener {
             val query = binding.editSearch.text.toString()
+
             if (query.isNotEmpty()) {
                 Utils.saveLastSearch(requireContext(), query)
                 adapter.clearItem()
