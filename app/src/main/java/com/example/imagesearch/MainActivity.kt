@@ -1,5 +1,6 @@
 package com.example.imagesearch
 
+import BookmarkFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils.replace
@@ -41,14 +42,13 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+        fun addLikedItem(item: SearchModel) {
+           if(!bookmarkeList.contains(item)) {
+               bookmarkeList.add(item)
+            }
+       }
 
-//        fun addLikedItem(item: SearchModel) {
-//            if(!likedItems.contains(item)) {
-//                likedItems.add(item)
-//            }
-//        }
-//
-//        fun removeLikedItem(item: SearchModel) {
-//            likedItems.remove(item)
-//        }
+        fun removeLikedItem(item: SearchModel) {
+            bookmarkeList.remove(item)
+        }
     }
