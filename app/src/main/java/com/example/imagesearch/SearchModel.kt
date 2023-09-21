@@ -1,6 +1,6 @@
 package com.example.imagesearch
 
-class SearchModel (
+data class SearchModel (
 
     var title: String,
     var dateTime: String,

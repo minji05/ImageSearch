@@ -9,6 +9,7 @@
 //import android.view.inputmethod.InputMethodManager
 //import android.widget.Toast
 //import androidx.recyclerview.widget.StaggeredGridLayoutManager
+//import com.example.imagesearch.RetrofitClient.apiService
 //import com.example.imagesearch.databinding.FragmentSearchBinding
 //
 //class SearchFragment : Fragment() {
@@ -71,9 +72,26 @@
 //    }
 //
 //    private fun fetchImageResults(query: String) {
-//        apiService.image_serach(Constants.AUTH_HEADER, query, "re")
+//        apiService.getImage(KakaoKey.AUTH_HEADER, searchText, "recency", 1, 60)?.enqueue(object :
+//            Callback<ImageModel?> {
+//            override fun onResponse(call: Call<ImageModel?>, response: Response<ImageModel?>) {
+//                for (img in response.body()?.imageDocument!!) {
+//                    val imageUrl = img.thumbnailUrl
+//                    val title = img.displaySiteName
+//                    val dateTime = img.datetime
+//
+//                    searchResultList.add(SearchModel(imageUrl, title, dateTime))
+//
+//                }
+//                listAdapter.addItems(searchResultList)
+//            }
+//
+//            override fun onFailure(call: Call<ImageModel?>, t: Throwable) {
+//                Log.d("result", "$t")
+//            }
+//
+//        })
 //    }
 //
 //
 //
-//}
